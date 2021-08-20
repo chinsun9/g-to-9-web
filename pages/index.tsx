@@ -24,6 +24,7 @@ const Home: NextPage = () => {
           value={text}
           onChange={onChangeHandler}
         />
+
         <div className="output">{gto9(text)}</div>
       </div>
     </>
