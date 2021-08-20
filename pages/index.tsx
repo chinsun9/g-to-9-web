@@ -5,13 +5,15 @@ import Gto9 from '../component/gto9';
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>gto9</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Gto9 />
-    </Layout>
+
+      <Layout>
+        <Gto9 />
+      </Layout>
+    </>
   );
 };
 

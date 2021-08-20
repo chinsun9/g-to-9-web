@@ -22,7 +22,9 @@ const Header = () => {
           <h1>g to 9</h1>
         </a>
       </Link>
-      <div>about</div>
+      <Link href="/about">
+        <a>about</a>
+      </Link>
     </Main>
   );
 };
