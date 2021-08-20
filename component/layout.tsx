@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Header from './header';
 
 const Main = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
 `;

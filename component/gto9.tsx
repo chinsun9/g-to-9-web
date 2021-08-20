@@ -3,17 +3,22 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { gto9 } from 'g-to-9';
 
 const Main = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
 
   > {
     * {
+      width: 100%;
       max-width: 600px;
       padding: 20px;
-      width: 100%;
+      margin: auto;
+    }
+
+    .output {
+      height: 100%;
+      overflow: auto;
     }
   }
 `;
@@ -31,18 +36,17 @@ const Gto9 = () => {
   }, []);
 
   return (
-    <>
-      <Main>
-        <textarea
-          ref={inputEl}
-          className="input"
-          value={text}
-          onChange={onChangeHandler}
-        />
+    <Main>
+      <textarea
+        className="input"
+        ref={inputEl}
+        rows={5}
+        value={text}
+        onChange={onChangeHandler}
+      />
 
-        <div className="output">{gto9(text)}</div>
-      </Main>
-    </>
+      <pre className="output">{gto9(text)}</pre>
+    </Main>
   );
 };
 
