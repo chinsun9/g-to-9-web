@@ -7,6 +7,10 @@ const Main = styled.header`
   justify-content: center;
   background-color: #c0c0c0;
   justify-content: space-between;
+
+  h1 {
+    margin: 0.3em;
+  }
 `;
 
 const Header = () => {
