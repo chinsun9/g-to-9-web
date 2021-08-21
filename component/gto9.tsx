@@ -59,9 +59,19 @@ const Main = styled.div`
 const Gto9 = () => {
   const [text, setText] = useState('');
   const inputEl = useRef<HTMLTextAreaElement>(null);
+  const outputEl = useRef<HTMLPreElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
+  };
+
+  const onClearHandler = () => {
+    setText('');
+    inputEl.current?.focus();
+  };
+
+  const onCopyHandler = () => {
+    navigator.clipboard.writeText(gto9(text));
   };
 
   useEffect(() => {
@@ -78,27 +88,20 @@ const Gto9 = () => {
           value={text}
           onChange={onChangeHandler}
         />
-        {text.length > 0 ? (
-          <button
-            className="icon"
-            onClick={() => {
-              console.log(`clear`);
-            }}
-          >
+        {text.length > 0 && (
+          <button className="icon" onClick={onClearHandler}>
             X
           </button>
-        ) : null}
+        )}
       </div>
 
-      <pre className="output">
-        <button
-          className="icon"
-          onClick={() => {
-            console.log(`copy`);
-          }}
-        >
-          <FaCopy />
-        </button>
+      <pre className="output" ref={outputEl}>
+        {text.length > 0 && (
+          <button className="icon" onClick={onCopyHandler}>
+            <FaCopy />
+          </button>
+        )}
+
         {gto9(text)}
       </pre>
     </Main>
