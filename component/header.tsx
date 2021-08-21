@@ -1,29 +1,43 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { FaGithub, FaInfo } from 'react-icons/fa';
 
 const Main = styled.header`
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: #c0c0c0;
-  justify-content: space-between;
+  background-color: #3c3c3c;
+  padding: 20px;
 
-  h1 {
-    margin: 0.3em;
+  .title {
+    margin: auto;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  > * {
+    align-self: center;
+  }
+
+  .icon {
+    font-size: x-large;
   }
 `;
 
 const Header = () => {
   return (
     <Main>
-      <div>repo</div>
       <Link href="/">
-        <a>
+        <a className="title">
           <h1>g to 9</h1>
         </a>
       </Link>
       <Link href="/about">
-        <a>about</a>
+        <a className="icon">
+          <FaInfo />
+        </a>
       </Link>
     </Main>
   );

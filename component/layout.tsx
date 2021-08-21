@@ -5,6 +5,8 @@ const Main = styled.div`
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
+  background-color: #1e1e1e;
+  color: white;
 `;
 
 type Prop = {
