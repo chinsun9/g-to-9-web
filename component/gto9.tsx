@@ -29,8 +29,12 @@ const Main = styled.div`
   .inputWrapper {
     position: relative;
 
-    .input:focus {
-      border-color: #0f9e67;
+    .input {
+      resize: vertical;
+
+      :focus {
+        border-color: #0f9e67;
+      }
     }
   }
 

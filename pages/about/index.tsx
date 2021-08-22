@@ -7,6 +7,8 @@ const Main = styled.div`
   max-width: 600px;
   margin: auto;
   padding: 20px;
+  overflow: auto;
+  height: 100%;
 
   p {
     line-height: 3rem;
